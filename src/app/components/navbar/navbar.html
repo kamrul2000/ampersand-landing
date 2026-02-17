@@ -1,0 +1,30 @@
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <span class="logo">
+        <img src="Ampersand_logo.svg" alt="Ampersand logo" class="logo-img" />
+      </span>
+      <div>
+        <!-- <div class="name">Ampersand</div> -->
+        <div class="tag">Engineering Digital Excellence for Modern Business</div>
+      </div>
+    </div>
+
+    <nav class="links">
+      <a href="#home" [class.active]="activeSection === 'home'">Home</a>
+      <a href="#about" [class.active]="activeSection === 'about'">About</a>
+      <a href="#edge" [class.active]="activeSection === 'edge'">Our Edge</a>
+      <a href="#spotlight" [class.active]="activeSection === 'spotlight'">Spotlight</a>
+      <a href="#ai" [class.active]="activeSection === 'ai'">AI</a>
+      <a href="#support" [class.active]="activeSection === 'support'">Support</a>
+      <a
+        class="cta"
+        href="#contact"
+        [class.active]="activeSection === 'contact'"
+        [class.active-cta]="activeSection === 'contact'"
+      >
+        Let’s Talk
+      </a>
+    </nav>
+  </div>
+</header>

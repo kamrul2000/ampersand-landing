@@ -1,11 +1,18 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { Navbar } from './components/navbar/navbar';
+import { About } from './sections/about/about';
+import { Services } from './sections/services/services';
+import { Products } from './sections/products/products';
+import { Contact } from './sections/contact/contact';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: true,
+  imports: [Navbar, About, Services, Products, Contact],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('ampersand-landing');
+export class AppComponent {
+  year = new Date().getFullYear();
 }

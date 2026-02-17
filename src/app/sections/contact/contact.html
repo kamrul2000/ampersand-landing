@@ -1,0 +1,50 @@
+<section id="contact" class="section">
+  <div class="container contact-wrap">
+    <div class="contact-copy">
+      <span class="pill">Let’s Talk</span>
+      <h2>Ready to build your next product?</h2>
+      <p>
+        Tell us about your idea, timeline, and goals. We’ll reply with a clear plan and the
+        next steps within 24 hours.
+      </p>
+      <div class="contact-details">
+        <div>
+          <div class="detail-label">Email</div>
+          <div class="detail-value">info@ampersandbd.com</div>
+        </div>
+        <div>
+          <div class="detail-label">Location</div>
+          <div class="detail-value">Bangladesh</div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="field">
+          <label>Name</label>
+          <input [(ngModel)]="model.name" name="name" required placeholder="Your name" />
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input [(ngModel)]="model.email" name="email" required type="email" placeholder="you@email.com" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Message</label>
+        <textarea
+          [(ngModel)]="model.message"
+          name="message"
+          required
+          rows="5"
+          placeholder="What do you want to build?"
+        ></textarea>
+      </div>
+
+      <button class="btn primary" type="submit">Send message</button>
+
+      <p *ngIf="sent" class="success-note">✅ Thanks! We received your message.</p>
+    </form>
+  </div>
+</section>

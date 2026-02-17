@@ -1,0 +1,15 @@
+.contact-form { display: grid; gap: 12px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+label { font-weight: 600; font-size: 13px; color: #475569; }
+input, textarea {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #cbd5f5;
+  outline: none;
+  background: #ffffff;
+  color: #0b1220;
+}
+input:focus, textarea:focus { border-color: #16a34a; }
+
+@media (max-width: 900px) { .row { grid-template-columns: 1fr; } }
