@@ -9,6 +9,7 @@ import { AfterViewInit, Component, HostListener } from '@angular/core';
 })
 export class Navbar implements AfterViewInit {
   activeSection = 'home';
+  menuOpen = false;
 
   ngAfterViewInit() {
     this.updateActiveSection();
@@ -17,6 +18,14 @@ export class Navbar implements AfterViewInit {
   @HostListener('window:scroll')
   onScroll() {
     this.updateActiveSection();
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 
   private updateActiveSection() {

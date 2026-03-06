@@ -14,6 +14,14 @@
   height: 68px;
 }
 
+.nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
 .brand { display: flex; gap: 10px; align-items: center; }
 .logo {
   width: 150px;
@@ -36,7 +44,14 @@
 .tag { font-size: 11px; color: #64748b; margin-top: 2px; max-width: 260px; }
 
 .links { display: flex; gap: 18px; align-items: center; }
-.links a { text-decoration: none; color: #334155; font-weight: 600; padding: 8px 12px; border-radius: 10px; }
+.links a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
 .links a:hover { opacity: 0.7; }
 .links a.active { color: #16a34a; border: 1px solid #bbf7d0; background: rgba(22, 163, 74, 0.08); }
 
@@ -51,10 +66,77 @@
   border: none;
 }
 
+.nav-toggle {
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid #cbd5f5;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+.nav-toggle-bar {
+  position: relative;
+  width: 16px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 999px;
+}
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 999px;
+}
+.nav-toggle-bar::before { top: -5px; }
+.nav-toggle-bar::after { top: 5px; }
+
 @media (max-width: 700px) {
   .tag { display: none; }
-  .links { gap: 12px; font-size: 14px; }
   .logo { width: 120px; height: 44px; }
+  .nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 10px 0;
+    gap: 8px;
+  }
+  .nav-main {
+    width: 100%;
+    justify-content: center;
+    position: relative;
+  }
+  .nav-toggle {
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+  }
+  .links {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .links.open {
+    display: flex;
+  }
+  .links a {
+    width: 100%;
+    padding: 8px 10px;
+  }
+  .cta {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
